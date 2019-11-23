@@ -1,2 +1,5 @@
-﻿1.0.1.0
+﻿1.0.2.0
+ split console write to 2 lines
+
+1.0.1.0
  added changelog.txt
