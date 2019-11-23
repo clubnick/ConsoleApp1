@@ -55,34 +55,16 @@ namespace ConsoleApp1
         {
             var stepParameters = TestData.BCStepParameters;
 
-
+            Console.WriteLine("Start version:1.0.8.0"+Environment.NewLine);
             using (var bcte = TCCreator.TestEngineBonusCampaign(stepParameters))
             {
-
-                Console.WriteLine("Start version:1.0.6.0");
-
-                Console.WriteLine("Bonus campaign Id: {0}", bcte.BonusCampaignParameters.BCBonusId.ToString());
-                Console.WriteLine("Bonus campaign Name: {0}", bcte.BonusCampaignParameters.BCBonusName.ToString());
-
-                Console.WriteLine("Finish version:1.0.6.0");
+                Console.WriteLine("BCAtype: {0}", bcte.BonusCampaignParameters.BCAType);
+                Console.WriteLine("BCABonusId: {0}", bcte.BonusCampaignParameters.BCABonusId);
+                Console.WriteLine("BCBonusName: {0}", bcte.BonusCampaignParameters.BCBonusName);
+                Console.WriteLine("BCVMinCountOfLegs: {0}", bcte.BonusCampaignParameters.BCVMinCountOfLegs);
+                Console.WriteLine("BCVCustomerCardOnly: {0}", bcte.BonusCampaignParameters.BCVCustomerCardOnly);
             }
-
-
-
-            //using (var bcte = TCCreator.TestEngineBonusCampaign())
-            //{
-            //    Console.WriteLine("Bonus campaign: {0} {1}", bcte.BonusCampaignParameters.BonusId, bcte.BonusCampaignParameters.BonusName);
-            //}
-
-            //using (var bcteE = TCCreator.TestEngineBonusCampaignE())
-            //{
-            //    Console.WriteLine("Bonus campaign: {0} {1}", bcteE.BonusCampaignParameters.BonusId, bcteE.BonusCampaignParameters.BonusName);
-            //}
-
-            //using (var bcteFail = TCCreator.TestEngineBonusCampaign_fail())
-            //{
-            //    Console.WriteLine("Bonus campaign: {0} {1}", bcteFail.BonusCampaignParameters.BonusId, bcteFail.BonusCampaignParameters.BonusName);
-            //}
+            Console.WriteLine(Environment.NewLine+"Finish version:1.0.8.0");
         }
     }
 }

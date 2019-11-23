@@ -1,4 +1,10 @@
-﻿1.0.7.0
+﻿1.0.8.0
+ refactoring the code, remove unused code
+  public int? BCAType { get; set; } // mandatory, between 1-7
+  public int? BCVMinCountOfLegs { get; set; } // mandatory, between 1-777
+  public bool? BCVCustomerCardOnly { get; set; } // default false
+
+1.0.7.0
  refactoring the code, remove unused code
  update long? BCBonusId;
  update string BCBonusName;

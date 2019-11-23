@@ -10,8 +10,11 @@ namespace ConsoleApp1
         public static readonly Dictionary<string, string> BCStepParameters
             = new Dictionary<string, string>
         {
-          //{ "BCBonusID", "0" },
-          //{ "BCBonusName", "StepBonusCampaignName" },
+          {"BCAType", "1"},
+          //{"BCABonusID", "0"},
+          {"BCBonusName", "QA(SW)"},
+          {"BCVMinCountOfLegs", "1"},
+          //{"BCVCustomerCardOnly", "true"}
         };
 
     };
