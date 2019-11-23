@@ -57,7 +57,7 @@ namespace ConsoleApp1
             using (var bcte = TCCreator.TestEngineBonusCampaign(stepParameters))
             {
 
-                Console.WriteLine("Start version:1.0.4.0");
+                Console.WriteLine("Start version:1.0.5.2");
 
                 Console.WriteLine("Bonus campaign: {0}", bcte.BonusCampaignParameters.BonusId);
                 Console.WriteLine("Bonus campaign: {0}", bcte.BonusCampaignParameters.BonusName);
