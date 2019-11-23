@@ -58,6 +58,9 @@ namespace ConsoleApp1
             {
                 Console.WriteLine("Bonus campaign: {0}", bcte.BonusCampaignParameters.BonusId);
                 Console.WriteLine("Bonus campaign: {0}", bcte.BonusCampaignParameters.BonusName);
+
+
+                Console.WriteLine("Finish}");
             }
 
 
