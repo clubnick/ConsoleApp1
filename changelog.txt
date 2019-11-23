@@ -1,4 +1,7 @@
-﻿1.0.4.0
+﻿1.0.4.1
+ change changelog - on the branch 1_0_4_1_track_remote
+
+1.0.4.0
  master branch  
  add console write version
 
