@@ -1,4 +1,9 @@
-﻿1.0.6.0
+﻿1.0.7.0
+ refactoring the code, remove unused code
+ update long? BCBonusId;
+ update string BCBonusName;
+
+1.0.6.0
  refactoring design of console write
 
 1.0.5.3

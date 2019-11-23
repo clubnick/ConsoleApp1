@@ -6,13 +6,8 @@ namespace TestCreators.Workers
 {
     public class BonusCampaignParameters
     {
-        public long BonusId { get; set; }
-        public string BonusName { get; set; }
-
-        public BonusCampaignParameters()
-        {
-            CheckParsedParameters();
-        }
+        public long? BCBonusId { get; set; } // > 0 for modify bonus, -1 default for create new bonus
+        public string BCBonusName { get; set; } // mandatory string
 
         public BonusCampaignParameters(IDictionary<string, string> stepParameters)
         {
@@ -21,36 +16,43 @@ namespace TestCreators.Workers
         }
 
 
-        public BonusCampaignParameters(string stepBonusId, string stepBonusName)
-        {
-            ParseStepParameters(stepBonusId, stepBonusName);
-            CheckParsedParameters();
-        }
-
         public void ParseStepParameters(IDictionary<string, string> d)
         {
-            var stepBonusId = d["BCBonusID"];
-            var stepBonusName = d["BCBonusName"];
+            string pname = null;
+            string s = null; ;
+            try
+            {
 
-            BonusId = long.Parse(stepBonusId);
-            BonusName = stepBonusName;
+                pname = "BCBonusID";
+                if (d.ContainsKey(pname) && !string.IsNullOrEmpty(s = d[pname])) BCBonusId = long.Parse(s.Trim());
+
+                pname = "BCBonusName";
+                if (d.ContainsKey(pname) && !string.IsNullOrEmpty(s = d[pname])) BCBonusName = s.Trim();
+            }
+            catch (Exception ex)
+            {
+                var emsg = "'" + pname.ToString() + "'='" + s.ToString() + "', " + ex.Message;
+                throw new Exception(emsg);
+            }
         }
 
-        public void ParseStepParameters(string stepBonusId, string stepBonusName)
-        {
-            BonusId = long.Parse(stepBonusId);
-            BonusName = stepBonusName;
-        }
         public void CheckParsedParameters()
         {
-            var sb = new StringBuilder();
-            if (BonusId == 0)
-                sb.AppendLine(string.Format("Invalid bonus Id={0},", BonusId));
-            if (BonusName == null)
-                sb.AppendLine(string.Format("Invalid bonus name={0},", BonusName));
+            try
+            {
+                var sb = new StringBuilder();
+                #region mandatory
+                if (!BCBonusId.HasValue || BCBonusId==0) sb.AppendLine(string.Format("Invalid BCBonusId='{0}',", BCBonusId));
+                if (BCBonusName == null) sb.AppendLine(string.Format("Invalid BCBonusName='{0}',", BCBonusName));
+                #endregion mandatory
 
-            if (sb.Length > 0)
-                throw new Exception(sb.ToString());
+                if (sb.Length > 0)
+                    throw new Exception(sb.ToString());
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }

@@ -5,6 +5,7 @@ namespace ConsoleApp1
 {
     class Program
     {
+        #region test
         //        static string StepDateFrom { get; set; } = "2019, 11, 19, 11, 10, 21";
         //        static string StepDateTo { get; set; } = "2019, 11, 19, 11, 10, 21";
 
@@ -48,6 +49,7 @@ namespace ConsoleApp1
         //        }
         //    }
         //}
+        #endregion test
 
         static void Main(string[] args)
         {
@@ -59,8 +61,8 @@ namespace ConsoleApp1
 
                 Console.WriteLine("Start version:1.0.6.0");
 
-                Console.WriteLine("Bonus campaign Id: {0}", bcte.BonusCampaignParameters.BonusId);
-                Console.WriteLine("Bonus campaign Name: {0}", bcte.BonusCampaignParameters.BonusName);
+                Console.WriteLine("Bonus campaign Id: {0}", bcte.BonusCampaignParameters.BCBonusId.ToString());
+                Console.WriteLine("Bonus campaign Name: {0}", bcte.BonusCampaignParameters.BCBonusName.ToString());
 
                 Console.WriteLine("Finish version:1.0.6.0");
             }

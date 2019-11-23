@@ -13,23 +13,5 @@ namespace TestCreators
             return new BonusCampaign(bcp);
         }
 
-        #region
-        public static BonusCampaign TestEngineBonusCampaign()
-        {
-            var bcp = new BonusCampaignParameters("-1", "StepBonusName");
-
-            return new BonusCampaign(bcp);
-        }
-
-        public static BonusCampaignParameters bcp => new BonusCampaignParameters("-1", "StepBonusName");
-        public static BonusCampaign TestEngineBonusCampaignE() => new BonusCampaign(bcp);
-
-        public static BonusCampaign TestEngineBonusCampaign_fail()
-        {
-            var bcp = new BonusCampaignParameters();
-
-            return new BonusCampaign(bcp);
-        }
-        #endregion
     }
 }
