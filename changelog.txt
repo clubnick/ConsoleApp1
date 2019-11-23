@@ -1,4 +1,7 @@
-﻿1.0.5.2
+﻿1.0.5.3
+ add console write version 1.0.5.3
+
+1.0.5.2
  add console write version 1.0.5.2
 
 1.0.5.1
