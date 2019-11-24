@@ -1,4 +1,7 @@
-﻿1.0.10.0
+﻿1.0.11.0
+ add new method BONUS_CAMPAIGN_FREE_BET_DRAFT
+
+1.0.10.0
  add new method BONUS_CAMPAIGN_ACCA_INSURANCE_DRAFT
 
 1.0.9.1
