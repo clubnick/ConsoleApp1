@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using System.Collections.Generic;
+using ConsoleApp1.Enums;
 
 namespace TestCreators.Workers
 {
@@ -11,7 +12,7 @@ namespace TestCreators.Workers
         public const bool BCSStakeRedeemableDefault = false;
         public long? BCABonusId { get; set; } // > 0 for modify bonus, -1 default for create new bonus if no defined
         public string BCBonusName { get; set; } // mandatory string
-        public int? BCAType { get; set; } // mandatory, between 1-7
+        public EnumBonusTypes? BCAType { get; set; } // mandatory, between 1-7
         public int? BCVMinCountOfLegs { get; set; } // mandatory, between 1-777
         public bool? BCVCustomerCardOnly { get; set; } // default false
         public bool? BCSStakeRedeemable { get; set; } // default false
@@ -29,7 +30,7 @@ namespace TestCreators.Workers
             string s = null; ;
             try
             {
-                if (d.ContainsKey(pname = "BCAType") && !string.IsNullOrEmpty(s = d[pname])) BCAType = int.Parse(s.Trim());
+                if (d.ContainsKey(pname = "BCAType") && !string.IsNullOrEmpty(s = d[pname])) BCAType = (EnumBonusTypes)Enum.Parse(typeof(EnumBonusTypes), s.Trim());
 
                 if (d.ContainsKey(pname = "BCABonusID") && !string.IsNullOrEmpty(s = d[pname])) BCABonusId = long.Parse(s.Trim());
 
@@ -56,7 +57,7 @@ namespace TestCreators.Workers
                 var sb = new StringBuilder();
                 var sbw = new StringBuilder();
                 #region mandatory
-                if (BCAType == null || BCAType < 1 || BCAType > 7)
+                if (BCAType == null || (int)BCAType < 1 || (int)BCAType > 7)
                     sb.AppendLine(string.Format("Invalid BCAType='{0}',", BCAType.ToString()));
 
                 if (!BCABonusId.HasValue || BCABonusId == 0)
