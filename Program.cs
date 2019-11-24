@@ -55,7 +55,7 @@ namespace ConsoleApp1
         {
             var stepParameters = TestData.BCStepParameters;
 
-            Console.WriteLine("Start version:1.0.10.0"+Environment.NewLine);
+            Console.WriteLine("Start version:1.0.9.1"+Environment.NewLine);
             using (var bcte = TCCreator.TestEngineBonusCampaign(stepParameters))
             {
                 Console.WriteLine("BCAtype: {0}", bcte.BonusCampaignParameters.BCAType);
@@ -65,16 +65,7 @@ namespace ConsoleApp1
                 Console.WriteLine("BCVCustomerCardOnly: {0}", bcte.BonusCampaignParameters.BCVCustomerCardOnly);
                 Console.WriteLine("BCSStakeRedeemable: {0}", bcte.BonusCampaignParameters.BCSStakeRedeemable);
             }
-            Console.WriteLine(Environment.NewLine+"Finish version:1.0.10.1");
-
-            BONUS_CAMPAIGN_ACCA_INSURANCE_DRAFT();
-        }
-
-        public static void BONUS_CAMPAIGN_ACCA_INSURANCE_DRAFT()
-        {
-            Console.WriteLine(Environment.NewLine);
-            Console.WriteLine("Start method BONUS_CAMPAIGN_ACCA_INSURANCE_DRAFT" + Environment.NewLine);
-            Console.WriteLine("Finish method BONUS_CAMPAIGN_ACCA_INSURANCE_DRAFT" + Environment.NewLine);
+            Console.WriteLine(Environment.NewLine+"Finish version:1.0.9.1");
         }
     }
 }
