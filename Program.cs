@@ -63,6 +63,7 @@ namespace ConsoleApp1
                 Console.WriteLine("BCBonusName: {0}", bcte.BonusCampaignParameters.BCBonusName);
                 Console.WriteLine("BCVMinCountOfLegs: {0}", bcte.BonusCampaignParameters.BCVMinCountOfLegs);
                 Console.WriteLine("BCVCustomerCardOnly: {0}", bcte.BonusCampaignParameters.BCVCustomerCardOnly);
+                Console.WriteLine("BCSStakeRedeemable: {0}", bcte.BonusCampaignParameters.BCSStakeRedeemable);
             }
             Console.WriteLine(Environment.NewLine+"Finish version:1.0.8.0");
         }

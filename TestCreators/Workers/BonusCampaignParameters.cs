@@ -8,11 +8,13 @@ namespace TestCreators.Workers
     {
         public const long BCBonusIdDefault = -1;
         public const bool BCVCustomerCardOnlyDefault = false;
+        public const bool BCSStakeRedeemableDefault = false;
         public long? BCABonusId { get; set; } // > 0 for modify bonus, -1 default for create new bonus if no defined
         public string BCBonusName { get; set; } // mandatory string
         public int? BCAType { get; set; } // mandatory, between 1-7
         public int? BCVMinCountOfLegs { get; set; } // mandatory, between 1-777
         public bool? BCVCustomerCardOnly { get; set; } // default false
+        public bool? BCSStakeRedeemable { get; set; } // default false
 
         public BonusCampaignParameters(IDictionary<string, string> stepParameters)
         {
@@ -37,6 +39,7 @@ namespace TestCreators.Workers
 
                 if (d.ContainsKey(pname = "BCVCustomerCardOnly") && !string.IsNullOrEmpty(s = d[pname])) BCVCustomerCardOnly = bool.Parse(s.Trim());
 
+                if (d.ContainsKey(pname = "BCSStakeRedeemable") && !string.IsNullOrEmpty(s = d[pname])) BCSStakeRedeemable = bool.Parse(s.Trim());
             }
             catch (Exception ex)
             {
@@ -71,15 +74,21 @@ namespace TestCreators.Workers
                 if (!BCVCustomerCardOnly.HasValue)
                 {
                     BCVCustomerCardOnly = BCVCustomerCardOnlyDefault;
-                    sbw.AppendLine(string.Format("Set default to BCVCustomerCardOnlyDefault='{0}',", BCVCustomerCardOnly.ToString()));
+                    sbw.AppendLine(string.Format("Set default to BCVCustomerCardOnly='{0}',", BCVCustomerCardOnly.ToString()));
+                }
+
+                if (!BCSStakeRedeemable.HasValue)
+                {
+                    BCSStakeRedeemable = BCSStakeRedeemableDefault;
+                    sbw.AppendLine(string.Format("Set default to BCSStakeRedeemale='{0}',", BCSStakeRedeemable.ToString()));
                 }
                 #endregion mandatory
 
-                    if (sb.Length > 0)
-                        throw new Exception(sb.ToString());
-                    if (sbw.Length > 0)
-                        Console.WriteLine(sbw.ToString());
-                }
+                if (sb.Length > 0)
+                    throw new Exception(sb.ToString());
+                if (sbw.Length > 0)
+                    Console.WriteLine(sbw.ToString());
+            }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);

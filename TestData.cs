@@ -15,6 +15,7 @@ namespace ConsoleApp1
           {"BCBonusName", "QA(SW)"},
           {"BCVMinCountOfLegs", "1"},
           //{"BCVCustomerCardOnly", "true"}
+          //{"BCSStakeRedeemable", "true"}
         };
 
     };
