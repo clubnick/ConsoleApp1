@@ -1,4 +1,7 @@
-﻿1.0.9.0
+﻿1.0.9.1
+  solved update version in Program.cs Start / Finish show the actual version  1.0.9.1 
+
+1.0.9.0
   merged branch name 1.0.8.1 to master (version 1.0.8.2)
 
 1.0.8.2
